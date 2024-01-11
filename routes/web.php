@@ -13,7 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    $page_title = "This is my first experiment on Laravel";
+
+    $data = [
+        'title' => $page_title,
+        'details' => [
+            'I like it!',
+            'Everything seems to be going well!!',
+        ]
+    ];
+
+    return view('experiment', $data);
 });
 
+Route::get('/more', function () {
+    return view('more');
+});
